@@ -3,5 +3,9 @@
 </head>
 <body>
     <h1>This is a test</h1>
-    <p>Paragraph text goes here.....</p>
+    {{>uploadForm}}
 </body>
+<template name="uploadForm">
+    <input type="file" id="file">
+    <input type="submit" value="Upload">
+</template>
