@@ -2,10 +2,86 @@
     <title>Testing...</title>
 </head>
 <body>
-    <h1>This is a test</h1>
-    {{>uploadForm}}
+    <h1>Ecard Creator</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="jumbotron">
+                <h2>Choose your design.</h2>
+                {{> images }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{> compose }}
+            </div>
+            <div class="col-md-6">
+                {{> preview }}
+            </div>
+        </div>
+    </div>
 </body>
-<template name="uploadForm">
-    <input type="file" id="file">
-    <input type="submit" value="Upload">
+<template name="images">
+    <div class="images">
+        {{#each images}}
+          <div class="image {{selectedClass}}"><img src="{{path}}" style="width: 200px;"/></div>
+        {{/each}}
+    </div>
+</template>
+<template name="compose">
+    <h2>Compose your message...</h2>
+    <form class="form-horizontal" >
+
+        <fieldset>
+            <!-- Form Name -->
+            <legend>Message to friend</legend>
+            <!-- To name text input-->
+            <div class="control-group">
+              <label class="control-label" for="to">Friend's name</label>
+              <div class="controls">
+                <input id="message_to" name="message_to" placeholder="" class="input-xlarge" required="" type="text">
+                <p class="help-block">Enter your friend's first name, so that they know the message is specifically for them.</p>
+              </div>
+            </div>
+
+            <!-- To email text input-->
+            <div class="control-group">
+              <label class="control-label" for="to_email">Friend's email</label>
+              <div class="controls">
+                <input id="message_to_email" name="message_to_email" placeholder="" class="input-xlarge" required="" type="text">
+                <p class="help-block">Enter your friend's email, so that we can deliver your message.</p>
+              </div>
+            </div>
+
+            <!-- Message text area -->
+            <div class="control-group">
+              <label class="control-label" for="message">Your message</label>
+              <div class="controls">
+                <textarea id="message" name="message"></textarea>
+                  <p class="help-block">Enter your message to this friend.</p>
+              </div>
+            </div>
+
+            <!-- From name text input-->
+            <div class="control-group">
+              <label class="control-label" for="from">Your name</label>
+              <div class="controls">
+                <input id="message_from" name="message_from" placeholder="" class="input-xlarge" required="" type="text">
+                <p class="help-block">Enter your first name, so your friend knows who the message is from.</p>
+              </div>
+            </div>
+
+
+        </fieldset>
+        <button href="#" class="btn btn-success"><span class="glyphicon glyphicon-send"></span> Send message</button>
+    </form>
+</template>
+<template name="preview">
+    <div id="preview" class="well">
+        <h2>Preview your message...</h2>
+        <img src="{{image}}" />
+        <p>Dear {{message_to}},</p>
+        <p>{{message}}</p>
+        <p>Yours,</p>
+        <p>{{message_from}}</p>
+    </div>
 </template>

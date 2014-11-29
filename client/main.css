@@ -1,0 +1,15 @@
+.images div {
+    display: inline-block;
+}
+.jumbotron {
+    padding: 2em !important;
+}
+.jumbotron h2 {
+    margin-top: 0;
+}
+.selected {
+    border: 0.8em solid #00d964;
+}
+#preview img {
+    width: 250px;
+}
