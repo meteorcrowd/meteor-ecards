@@ -12,7 +12,7 @@ Template.images.helpers({
     'selectedClass': function () {
         'use strict';
         var imageId = this.id,
-            selectedImage = Session.get('selectedImage');
+            selectedImage = Session.get('selectedImageId');
         if (imageId === selectedImage) {
             return "selected";
         }
@@ -21,7 +21,6 @@ Template.images.helpers({
 Template.images.events({
     'click .image': function (event) {
         'use strict';
-        console.log(this.id);
         Session.set('selectedImageId', this.id);
         Session.set('selectedImagePath', this.path);
     }
@@ -29,7 +28,21 @@ Template.images.events({
 Template.compose.events({
     'keyup, change form': function (event) {
         'use strict';
-       Session.set(event.target.name, event.target.value);
+        Session.set(event.target.name, event.target.value);
+    },
+    'click .sendEmail': function (event) {
+        'use strict';
+        var fromName = Session.get('message_from_name'),
+            fromEmail = Session.get('message_from_email'),
+            toName = Session.get('message_to_name'),
+            toEmail = Session.get('message_to_email'),
+            subject = 'Message from' + fromName,
+            message = Session.get('message');
+        Meteor.call('sendEmail',
+            toEmail,
+            fromEmail,        
+            subject,
+            message);
     }
 });
 Template.preview.helpers({
@@ -47,7 +60,7 @@ Template.preview.helpers({
     },
     'message_from': function () {
         'use strict';
-        return Session.get('message_from');
+        return Session.get('message_from_email');
     },
     'message': function () {
         'use strict';
