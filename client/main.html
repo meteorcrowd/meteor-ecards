@@ -35,8 +35,8 @@
     <p>it's gone!</p>
      <button class="btn btn-primary btn-success sendMoreEmail"><span class="glyphicon glyphicon-send"></span> Compose another</button>
     {{else}}
-        <div id="preview" class="panel">
-        <h2>Preview your message...</h2>
+        <div id="compose" class="panel">
+        <h2>Compose your message...</h2>
         <img src="{{image}}" />
         <p><strong>FROM:</strong> {{> m_editable message_from_email_options}}</p>
         <p><strong>TO:</strong> {{> m_editable message_to_email_options}}</p>
