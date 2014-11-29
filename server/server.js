@@ -1,5 +1,5 @@
 Meteor.methods({
-  sendEmail: function (to, from, subject, message) {
+  sendEmail: function (toEmail, fromEmail, subject, message) {
     // Let other method calls from the same client start running,
     // without waiting for the email sending to complete.
     this.unblock();
@@ -12,8 +12,8 @@ Meteor.methods({
     // is allowed to send per day
 
     Email.send({
-      to: to,
-      from: 'email@example.com',
+      to: toEmail,
+      from: fromEmail,
       subject: subject,
       text: message
     });

@@ -73,7 +73,7 @@
             
             <!-- From email text input-->
             <div class="control-group">
-              <label class="control-label" for="message_from_email">Your name</label>
+              <label class="control-label" for="message_from_email">Your email</label>
               <div class="controls">
                 <input id="message_from_email" name="message_from_email" placeholder="" class="input-xlarge" required="" type="text">
                 <p class="help-block">Enter your email, so your friend can reply to you.</p>
@@ -89,9 +89,11 @@
     <div id="preview" class="well">
         <h2>Preview your message...</h2>
         <img src="{{image}}" />
-        <p>Dear {{message_to}},</p>
+        <p><strong>FROM:</strong> {{message_from_email}}</p>
+        <p><strong>TO:</strong> {{message_to_email}}</p>
+        <p>Dear {{message_to_name}},</p>
         <p>{{message}}</p>
         <p>Yours,</p>
-        <p>{{message_from}}</p>
+        <p>{{message_from_name}}</p>
     </div>
 </template>

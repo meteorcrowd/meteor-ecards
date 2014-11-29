@@ -36,7 +36,7 @@ Template.compose.events({
             fromEmail = Session.get('message_from_email'),
             toName = Session.get('message_to_name'),
             toEmail = Session.get('message_to_email'),
-            subject = 'Message from' + fromName,
+            subject = 'eCard from ' + fromName,
             message = Session.get('message');
         Meteor.call('sendEmail',
             toEmail,
@@ -50,15 +50,19 @@ Template.preview.helpers({
         'use strict';
         return Session.get('selectedImagePath');
     },
-    'message_to': function () {
+    'message_to_name': function () {
         'use strict';
-        return Session.get('message_to');
+        return Session.get('message_to_name');
     },
-    'to_email': function () {
+    'message_to_email': function () {
         'use strict';
         return Session.get('message_to_email');
     },
-    'message_from': function () {
+    'message_from_name': function () {
+        'use strict';
+        return Session.get('message_from_name');
+    },
+    'message_from_email': function () {
         'use strict';
         return Session.get('message_from_email');
     },
