@@ -37,12 +37,20 @@ Template.compose.events({
             toName = Session.get('message_to_name'),
             toEmail = Session.get('message_to_email'),
             subject = 'eCard from ' + fromName,
+            image = Session.get('selectedImagePath'),
             message = Session.get('message');
+        var htmlContext = {
+            message_to_name: toName,
+            message_from_name: fromName,
+            message: message,
+            image: image
+        };
+        var messageHtml = Blaze.toHTMLWithData(Template.htmlEmail, htmlContext);
         Meteor.call('sendEmail',
             toEmail,
             fromEmail,        
             subject,
-            message);
+            messageHtml);
     }
 });
 Template.preview.helpers({

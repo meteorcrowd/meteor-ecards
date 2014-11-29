@@ -15,7 +15,7 @@ Meteor.methods({
       to: toEmail,
       from: fromEmail,
       subject: subject,
-      text: message
+      html: message
     });
   }
 });
