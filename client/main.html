@@ -34,17 +34,12 @@
     <div id="preview" class="panel">
         <h2>Preview your message...</h2>
         <img src="{{image}}" />
-<!--
-        <p><strong>FROM:</strong> {{> m_editable type="text" emptyText="Your email" position="top" onsubmit="
-            function() {
-                Session.set('message_from_email', value)
-            }" }}</p>
--->
-        <p><strong>TO:</strong> {{> m_editable type="text" emptyText="Your friend's email" position="top"}}</p>
-        <p>Dear {{> m_editable type="text" value="" emptyText="Your friend's name" position="top"}},</p>
-        <p>{{> m_editable type="textarea" value="" emptyText="Your message" position="top"}}</p>
+        <p><strong>FROM:</strong> {{> m_editable message_from_email_options}}</p>
+        <p><strong>TO:</strong> {{> m_editable message_to_email_options}}</p>
+        <p>Dear {{> m_editable message_to_name_options}},</p>
+        <p>{{> m_editable message_options}}</p>
         <p>Yours,</p>
-        <p>{{> m_editable type="text" emptyText="Your name" position="bottom" }}</p>
+        <p>{{> m_editable message_from_name_options}}</p>
     </div>
 </template>
 <template name="htmlEmail">
