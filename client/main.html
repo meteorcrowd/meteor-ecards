@@ -31,7 +31,11 @@
     </div>
 </template>
 <template name="compose">
-    <div id="preview" class="panel">
+    {{#if messageSent}}
+    <p>it's gone!</p>
+     <button class="btn btn-primary btn-success sendMoreEmail"><span class="glyphicon glyphicon-send"></span> Compose another</button>
+    {{else}}
+        <div id="preview" class="panel">
         <h2>Preview your message...</h2>
         <img src="{{image}}" />
         <p><strong>FROM:</strong> {{> m_editable message_from_email_options}}</p>
@@ -42,6 +46,8 @@
         <p>{{> m_editable message_from_name_options}}</p>
         <button class="btn btn-primary btn-success sendEmail"><span class="glyphicon glyphicon-send"></span> Send message</button>
     </div>
+    {{/if}}
+
 </template>
 <template name="htmlEmail">
     <p>Dear {{message_to_name}},</p>

@@ -47,6 +47,13 @@ Template.compose.events({
             fromEmail,        
             subject,
             messageHtml);
+        Session.set('messageSent', true);
+    },
+    'click .sendMoreEmail': function (event) {
+        'use strict';
+        Session.set('messageSent', false);
+        Session.keys = {};
+        console.log("send");
     }
 });
 
@@ -110,5 +117,8 @@ Template.compose.helpers({
                 Session.set('message_from_email', value);
             }
         };
+    },
+    'messageSent': function () {
+        return Session.get('messageSent');
     }
 });
