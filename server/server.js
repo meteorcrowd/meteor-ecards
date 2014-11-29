@@ -2,7 +2,7 @@ Meteor.methods({
   sendEmail: function (toEmail, fromEmail, subject, message) {
     // Let other method calls from the same client start running,
     // without waiting for the email sending to complete.
-    this.unblock();
+      this.unblock();
 
     // don’t allow sending email unless the user is logged in
     //if (!Meteor.user())
