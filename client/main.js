@@ -4,6 +4,16 @@ var Images = [
         {id: 3, path: "images/webmaker-logo.png"}
     ];
 
+var your_message_options = {
+    type: 'textarea',
+    position: 'top',
+    emptyText: "Your message",
+    value: Session.get('message'),
+    onsubmit: function (message_value) {
+        Session.set('message', message_value);
+    }
+}
+
 Template.images.helpers({
     'images': function () {
         'use strict';
@@ -53,29 +63,32 @@ Template.compose.events({
             messageHtml);
     }
 });
-Template.preview.helpers({
-    'image': function () {
-        'use strict';
-        return Session.get('selectedImagePath');
-    },
-    'message_to_name': function () {
-        'use strict';
-        return Session.get('message_to_name');
-    },
-    'message_to_email': function () {
-        'use strict';
-        return Session.get('message_to_email');
-    },
-    'message_from_name': function () {
-        'use strict';
-        return Session.get('message_from_name');
-    },
-    'message_from_email': function () {
-        'use strict';
-        return Session.get('message_from_email');
-    },
-    'message': function () {
-        'use strict';
-        return Session.get('message');
-    }
-});
+
+
+
+//Template.preview.helpers({
+//    'image': function () {
+//        'use strict';
+//        return Session.get('selectedImagePath');
+//    },
+//    'message_to_name': function () {
+//        'use strict';
+//        return Session.get('message_to_name');
+//    },
+//    'message_to_email': function () {
+//        'use strict';
+//        return Session.get('message_to_email');
+//    },
+//    'message_from_name': function () {
+//        'use strict';
+//        return Session.get('message_from_name');
+//    },
+//    'message_from_email': function () {
+//        'use strict';
+//        return Session.get('message_from_email');
+//    },
+//    'message': function () {
+//        'use strict';
+//        return Session.get('message');
+//    }
+//});

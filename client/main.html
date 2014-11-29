@@ -11,10 +11,12 @@
             </div>
         </div>
         <div class="row">
+<!--
             <div class="col-md-6">
                 {{> compose }}
             </div>
-            <div class="col-md-6">
+-->
+            <div class="col-md-6 col-md-offset-3">
                 {{> preview }}
             </div>
         </div>
@@ -86,15 +88,15 @@
     </form>
 </template>
 <template name="preview">
-    <div id="preview" class="well">
+    <div id="preview" class="panel">
         <h2>Preview your message...</h2>
         <img src="{{image}}" />
-        <p><strong>FROM:</strong> {{message_from_email}}</p>
-        <p><strong>TO:</strong> {{message_to_email}}</p>
-        <p>Dear {{message_to_name}},</p>
-        <p>{{message}}</p>
+        <p><strong>FROM:</strong> {{> m_editable type="text" emptyText="Your email" position="top"}}</p>
+        <p><strong>TO:</strong> {{> m_editable type="text" emptyText="Your friend's email" position="top"}}</p>
+        <p>Dear {{> m_editable type="text" value="" emptyText="Your friend's name" position="top"}},</p>
+        <p>{{> m_editable type="textarea" value="" emptyText="Your message" position="top"}}</p>
         <p>Yours,</p>
-        <p>{{message_from_name}}</p>
+        <p>{{> m_editable type="text" emptyText="Your name" position="bottom" }}</p>
     </div>
 </template>
 <template name="htmlEmail">
