@@ -26,10 +26,6 @@ Template.images.events({
     }
 });
 Template.compose.events({
-    'keyup, change form': function (event) {
-        'use strict';
-        Session.set(event.target.name, event.target.value);
-    },
     'click .sendEmail': function (event) {
         'use strict';
         var fromName = Session.get('message_from_name'),
