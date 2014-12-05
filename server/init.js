@@ -1,3 +1,5 @@
+Images = new Mongo.Collection('images');
+
 var base_dir = process.env.PWD;
 console.log(base_dir);
 var upload_dir = base_dir + '/public/images';
@@ -10,7 +12,12 @@ Meteor.startup(function () {
             return formData.contentType;
         },
         finished: function(file, folder, formFields) {
-            console.log('Write to database: ' + folder + '/' + file);
+//            console.log('Write to database: ' + folder + '/' + file);
+           var imagePath = folder + '/' + file;
+            console.log(imagePath);
+//            Images.insert({
+//                path: imagePath
+//            });
         }
     })
 });
