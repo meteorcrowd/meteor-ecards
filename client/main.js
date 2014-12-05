@@ -1,8 +1,9 @@
-var Images = [
-        {id: 1, path: "images/Erika.jpg"},
-        {id: 2, path: "images/Earth.jpg"},
-        {id: 3, path: "images/webmaker-logo.png"}
-    ];
+//var Images = [
+//        {id: 1, path: "images/Erika.jpg"},
+//        {id: 2, path: "images/Earth.jpg"},
+//        {id: 3, path: "images/webmaker-logo.png"}
+//    ];
+
 
 Template.images.helpers({
     'images': function () {
