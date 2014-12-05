@@ -14,3 +14,6 @@ workman:meteor-editable
 chrismbeckett:fontawesome4
 accounts-base
 accounts-password
+tomi:upload-server
+tomi:upload-jquery
+

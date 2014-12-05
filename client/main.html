@@ -7,6 +7,7 @@
         <div class="row">
             <div class="jumbotron">
                 <h2>Choose your design.</h2>
+                {{> uploadImages}}
                 {{> images }}
             </div>
         </div>
@@ -55,4 +56,9 @@
     <img src="http://ecards.meteor.com/{{ image }}" />
     <p>Yours,</p>
     <p>{{message_from_name}}</p>
+</template>
+
+<template name="uploadImages">
+    <h3>Upload images</h3>
+    {{> upload_bootstrap contentType='images' fileTypes='.jpg' multiple=true }}
 </template>
