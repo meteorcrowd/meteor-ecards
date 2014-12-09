@@ -4,16 +4,11 @@
 # but you can also edit it by hand.
 
 meteor-platform
+autopublish
 insecure
 mizzao:bootstrap-3
-underscore
-cfs:standard-packages
-cfs:filesystem
 email
 workman:meteor-editable
-chrismbeckett:fontawesome4
-accounts-base
-accounts-password
 tomi:upload-server
 tomi:upload-jquery
 iron:router
