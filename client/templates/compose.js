@@ -17,7 +17,7 @@ Template.compose.events({
         var messageHtml = Blaze.toHTMLWithData(Template.htmlEmail, htmlContext);
         Meteor.call('sendEmail',
             toEmail,
-            fromEmail,        
+            fromEmail,
             subject,
             messageHtml);
         Session.set('messageSent', true);
