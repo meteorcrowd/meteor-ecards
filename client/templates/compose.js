@@ -6,7 +6,7 @@ Template.compose.events({
             toName = Session.get('message_to_name'),
             toEmail = Session.get('message_to_email'),
             subject = 'eCard from ' + fromName,
-            image = Session.get('selectedImagePath'),
+            image = Session.get('selectedImageName'),
             message = Session.get('message');
         var htmlContext = {
             message_to_name: toName,
