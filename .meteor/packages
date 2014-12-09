@@ -16,3 +16,5 @@ accounts-base
 accounts-password
 tomi:upload-server
 tomi:upload-jquery
+iron:router
+

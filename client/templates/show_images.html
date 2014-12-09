@@ -1,0 +1,7 @@
+<template name="showImages">
+    <div class="images">
+        {{#each images}}
+          <div class="image {{selectedClass}}"><img src="{{path}}" style="width: 200px;"/></div>
+        {{/each}}
+    </div>
+</template>
