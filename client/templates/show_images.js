@@ -1,7 +1,7 @@
 Template.showImages.helpers({
     'images': function () {
         'use strict';
-        return Images.find().fetch();
+        return ecardImages.find().fetch();
     },
     'selectedClass': function () {
         'use strict';
