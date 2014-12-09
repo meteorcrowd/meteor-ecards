@@ -1,1 +1,1 @@
-Images = new Mongo.Collection('images');
+ecardImages = new Mongo.Collection('ecardImages');
