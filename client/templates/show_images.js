@@ -1,9 +1,10 @@
 Template.showImages.helpers({
-    'images': function () {
+    images: function () {
         'use strict';
-        return ecardImages.find().fetch();
+        var images = ecardImages.find().fetch();
+        return images;
     },
-    'selectedClass': function () {
+    selectedClass: function () {
         'use strict';
         var imageId = this._id,
             selectedImage = Session.get('selectedImageId');
